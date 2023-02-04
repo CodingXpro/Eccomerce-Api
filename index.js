@@ -2,15 +2,16 @@ const express = require('express');
 const app = express();
 const mongoose = require("mongoose");
 const productRoute = require("./routes/product");
-const PORT = 8000;
+require('dotenv').config()
+const PORT = process.env.PORT || 8000;
 
 
 //------------ DB Configuration ------------//
-const db = require('./config/key').MongoURI;
+// const db = process.env.MongoURI
 
 
 //------------ Mongo Connection ------------//
-mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log("Successfully connected to MongoDB"))
     .catch(err => console.log(err));
 
