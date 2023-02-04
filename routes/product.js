@@ -6,7 +6,7 @@ const router = require("express").Router();
 
 //CREATE PRODUCT
 
-router.post("/create",  async (req, res) => {
+router.post("/create", async (req, res) => {
   // console.log(req.body);
   const newProduct = new Product(req.body);
 
@@ -43,15 +43,15 @@ router.get("/", async (req, res) => {
 
 //UPDATE INCREAMENTIN AND DECREAMENTING
 router.post('/:id', async (req, res) => {
- try {
-  const id = req.params.id;
-  const update = req.query;
-  const options = {new: true};
-  const result = await Product.findByIdAndUpdate(id,update,options);
-  res.status(200).json(result);
- } catch (error) {
-  res.status(500).json(error);
- }
+  try {
+    const id = req.params.id;
+    const update = req.query;
+    const options = { new: true };
+    const result = await Product.findByIdAndUpdate(id, update, options);
+    res.status(200).json(result);
+  } catch (error) {
+    res.status(500).json(error);
+  }
 });
 
 module.exports = router;

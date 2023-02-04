@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require("mongoose");
 const productRoute = require("./routes/product");
-const PORT = process.env.PORT || 8000;
+const PORT = 8000;
 
 
 //------------ DB Configuration ------------//
@@ -21,7 +21,7 @@ app.use(express.json());
 app.use("/products", productRoute);
 
 //Server is listenning that port
-app.listen(PORT,()=>{
+app.listen(PORT, () => {
     console.log(`Backend Server running on PORT ${PORT}`);
 })
 

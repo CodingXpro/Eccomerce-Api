@@ -2,8 +2,7 @@
 //KEY For DB Connection
 
 module.exports = {
-    MongoURI: "mongodb://localhost:27017"
+    MongoURI: "mongodb://127.0.0.1:27017/Eccomerce-Api"
 }
 
 
-// "mongodb+srv://Sachiii:Sachiii@cluster0.qfobsr3.mongodb.net/Ecomarce_API?retryWrites=true&w=majority"
